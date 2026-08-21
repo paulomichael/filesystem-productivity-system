@@ -1,5 +1,6 @@
 
-# 📁 taskfolders
+# 📁 The Filesystem Productivity System (FPS)
+##  or simply `taskfolders`
 
 **Organize your life with folders and files. No apps. No subscriptions. Just your computer.**
 
@@ -53,13 +54,13 @@ This repository contains complete guides in two formats:
 - **For everyone** — No terminal, no scripts, no GitHub required
 - Just your file manager and basic computer skills
 - [Read the Simple Guide](docs/simple/README.md)
-- [Português](docs/simple/README.pt.md)
+
 
 ### 🚀 Advanced Version
 - **For power users** — Adds Git for version control, scripts for automation
 - Full history, collaboration, searching, and more
 - [Read the Advanced Guide](docs/advanced/README.md)
-- [Português](docs/advanced/README.pt.md)
+
 
 ---
 
