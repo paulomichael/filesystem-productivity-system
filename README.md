@@ -1,103 +1,113 @@
+# The Filesystem Productivity System (FPS)
 
-# 📁 The Filesystem Productivity System (FPS)
-##  or simply `taskfolders`
+## Also known as `taskfolders`
 
-**Organize your life with folders and files. No apps. No subscriptions. Just your computer.**
-
----
-
-## ✨ What Is This?
-
-The Filesystem Productivity System (FPS) is a complete task management system that uses nothing but your operating system's filesystem, your file manager, and plain text files.
-
-**The core idea is simple:** Every task is a folder. Moving folders between directories changes their status. Everything else—notes, files, checklists—lives inside the task folder.
-
-No special apps. No cloud subscriptions. No vendor lock-in. Just your computer, working the way it was designed to.
+A task management system that uses only your operating system's filesystem, your file manager, and plain text files. No apps, no subscriptions, no vendor lock-in.
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
-### 1. Create the structure
+**1. Create the structure**
+
 ```
 ~/Documents/Tasks/
-├── Inbox/          # New tasks go here
-├── Today/          # Working on now
-├── This Week/      # Planned for later
-├── Waiting/        # Blocked by something
-├── Done/           # Completed
-└── Archive/        # Long-term storage
+├── Inbox/
+├── Today/
+├── This Week/
+├── Waiting/
+├── Done/
+└── Archive/
 ```
 
-### 2. Create a task
+**2. Create a task**
+
 ```
 Inbox/
 └── Call Dentist/
-    └── description.txt   # "Schedule cleaning for next month"
+    └── description.txt
 ```
 
-### 3. Move it forward
-- Drag to `Today/` when you start working on it
-- Add notes, files, and checklists
+**3. Move it forward**
+
+- Drag to `Today/` when you start working
 - Drag to `Done/` when finished
 
-### 4. That's it.
-No terminal. No scripts. Just folders and files.
+That's it. The rest of this document explains the details.
 
 ---
 
-## 📖 Documentation
+## The Core Idea
 
-This repository contains complete guides in two formats:
+### Folders as Tasks
 
-### 🔰 Simple Version
-- **For everyone** — No terminal, no scripts, no GitHub required
-- Just your file manager and basic computer skills
-- [Read the Simple Guide](docs/simple/README.md)
+Every task is a folder. Everything related to that task lives inside it:
+- Task description
+- Notes and updates
+- Checklists
+- Attachments (files, images, documents)
+- Sub-tasks
 
+### Movement as Status Change
 
-### 🚀 Advanced Version
-- **For power users** — Adds Git for version control, scripts for automation
-- Full history, collaboration, searching, and more
-- [Read the Advanced Guide](docs/advanced/README.md)
+Moving a folder between directories changes its status:
 
+| Action | Meaning |
+|--------|---------|
+| `Inbox/` → `Today/` | Starting work on this |
+| `Today/` → `Done/` | Completed |
+| `Today/` → `Waiting/` | Blocked, waiting on something |
+| `Inbox/` → `This Week/` | Scheduled for later |
 
----
+### Names as Descriptions
 
-## 🎯 Why This Works
+Linux filesystems allow up to 255 characters for a filename. This means you can put the entire task description in the folder name itself.
 
-| Problem | Solution |
-|---------|----------|
-| Too many apps | Uses tools you already have |
-| Expensive subscriptions | Completely free |
-| Vendor lock-in | Plain files, open formats |
-| Learning curve | Uses what you already know |
-| Attachments limited | Unlimited files per task |
-| Offline dependency | Works without internet |
-| Future-proof | Files will always be readable |
+Instead of:
 
----
-
-## 🗂️ System Structure
-
-### Directory Layout
 ```
-Tasks/
-├── Inbox/           # Capture new ideas quickly
-├── Today/           # Current work in progress
-├── This Week/       # Scheduled but not urgent
-├── Waiting/         # Blocked by someone/something
-├── Done/            # Completed tasks (short-term)
-└── Archive/         # Historical tasks (long-term)
+Task_001/
+```
 
-Projects/            # Optional: Large initiatives
-└── Project Name/
+You can have:
+
+```
+Call dentist - schedule cleaning - need insurance info - due Aug 30/
+```
+
+When you open your `Today/` folder, you see everything at a glance. No clicking required.
+
+---
+
+## Directory Structure
+
+### The Six Main Folders
+
+```
+~/Documents/Tasks/
+├── Inbox/          # New tasks, quick capture
+├── Today/          # Active work
+├── This Week/      # Planned, not urgent
+├── Waiting/        # Blocked by something or someone
+├── Done/           # Completed tasks (short-term)
+└── Archive/        # Historical tasks (long-term)
+```
+
+### Optional: Projects Folder
+
+For larger initiatives that need their own structure:
+
+```
+~/Documents/Tasks/Projects/
+└── Website Redesign 2026/
     ├── 01_Planning/
-    ├── 02_Execution/
-    └── 03_Complete/
+    ├── 02_Design/
+    ├── 03_Development/
+    └── 04_Launch/
 ```
 
 ### Task Folder Template
+
 ```
 Task Name/
 ├── description.txt      # What needs to be done
@@ -107,55 +117,171 @@ Task Name/
 └── references/          # Reference material
 ```
 
----
-
-## 💡 Key Concepts
-
-### Tasks as Folders
-Every task is a folder containing everything related to it: descriptions, notes, checklists, and attachments. This means you can store *anything* with your task—not just text.
-
-### Movement as Status Change
-Moving a folder between directories changes its status:
-- `Inbox/` → `Today/` = "I'm starting this"
-- `Today/` → `Done/` = "I finished this"
-- `Today/` → `Waiting/` = "I'm blocked"
-
-### Descriptive Names
-Name tasks clearly, using markers for quick scanning:
-- `[!]` — High priority / urgent
-- `[@]` — Waiting on someone
-- `[?]` — Need more information
-- `[DONE]` — Completed
+The only required file is `description.txt`. Everything else is optional.
 
 ---
 
-## 🎬 Examples
+## Basic Usage (No Terminal Required)
 
-### Simple Example: Daily Workflow
+### Creating a New Task
 
-**Morning:** Create tasks in `Inbox/`
+1. Navigate to `Inbox/`
+2. Create a new folder with a descriptive name
+3. Inside the folder, create `description.txt`
+4. Write what needs to be done
+
+Example:
+
+```
+Inbox/
+└── Server Migration - backup completed - testing phase 80% - due Aug 25/
+    └── description.txt
+```
+
+### Processing Inbox
+
+Open `Inbox/` and decide what to do with each task:
+
+- Drag to `Today/` if you'll work on it now
+- Drag to `This Week/` if it's scheduled for later
+- Drag to `Waiting/` if it's blocked
+- Leave in `Inbox/` if you need more information
+
+### Working on a Task
+
+1. Open the task folder in `Today/`
+2. Add notes to `notes.txt` as you make progress
+3. Update `checklist.txt` to track subtasks
+4. Drag files into the folder as needed
+
+### Completing a Task
+
+1. Verify all work is done
+2. Drag the folder from `Today/` to `Done/`
+3. Optionally rename to add `[DONE]` to the folder name
+
+### Archiving
+
+When `Done/` becomes full, move completed tasks to `Archive/`:
+
+1. Create a dated folder: `Archive/2026-08/`
+2. Drag old task folders into it
+
+---
+
+## Advanced Usage (Optional)
+
+### Version Control with Git
+
+The folder structure works well with Git for version control and collaboration.
+
+**Initialize:**
+
+```
+cd ~/Documents/Tasks/
+git init
+git add .
+git commit -m "Initial task system setup"
+```
+
+**Daily workflow:**
+
+```
+git add .
+git commit -m "EOD: Completed 3 tasks, moved 2 to Waiting"
+```
+
+**Remote repository:**
+
+```
+git remote add origin https://github.com/yourusername/taskfolders.git
+git push -u origin main
+```
+
+### Searching
+
+**Using the file manager:**
+- Use the search bar
+- Sort by date modified
+- Search within files (if supported)
+
+**Using the command line:**
+
+```
+# Find all tasks containing "urgent"
+grep -r "urgent" ~/Documents/Tasks/
+
+# Find tasks in the Today folder
+find ~/Documents/Tasks/Today/ -type d -maxdepth 1
+
+# Find tasks with PDF attachments
+find ~/Documents/Tasks/ -name "*.pdf"
+```
+
+### Automation Scripts
+
+**Daily summary:**
+
+```
+#!/bin/bash
+TASKS_DIR=~/Documents/Tasks
+
+echo "Task Summary - $(date)"
+echo "Inbox:    $(find $TASKS_DIR/Inbox/ -mindepth 1 -maxdepth 1 -type d | wc -l)"
+echo "Today:    $(find $TASKS_DIR/Today/ -mindepth 1 -maxdepth 1 -type d | wc -l)"
+echo "Waiting:  $(find $TASKS_DIR/Waiting/ -mindepth 1 -maxdepth 1 -type d | wc -l)"
+echo "Done:     $(find $TASKS_DIR/Done/ -mindepth 1 -maxdepth 1 -type d | wc -l)"
+```
+
+**Auto-archive:**
+
+```
+#!/bin/bash
+MONTH=$(date +%Y-%m)
+mkdir -p ~/Documents/Tasks/Archive/$MONTH
+find ~/Documents/Tasks/Done/ -type d -ctime +30 -exec mv {} ~/Documents/Tasks/Archive/$MONTH/ \;
+```
+
+### File Manager Custom Actions
+
+**In Thunar**, you can create custom actions for common operations:
+
+- "Move to Today" — Move selected folder to `Today/`
+- "Mark Complete" — Add `[DONE]` to folder name and move to `Done/`
+- "Add Priority" — Add `[!]` to folder name
+
+---
+
+## Examples
+
+### Example: Daily Workflow
+
+**Morning: Inbox**
+
 ```
 Inbox/
 ├── Call Dentist/
-├── Update Website/
+├── Website Update/
 └── Review Reports/
 ```
 
-**Process:** Move to appropriate folders
+**Processing: Move to appropriate folders**
+
 ```
 Today/
-└── Update Website/       # Working on now
+└── Website Update/
 
 Waiting/
-└── [@Sarah] Call Dentist/  # Waiting for office to open
+└── [@Sarah] Call Dentist/
 
 This Week/
-└── Review Reports/       # Scheduled for later
+└── Review Reports/
 ```
 
-**Work:** Add progress to `Today/` task
+**Working: Add content**
+
 ```
-Update Website/
+Today/Website Update/
 ├── description.txt       # "Fix broken contact form"
 ├── notes.txt            # "Found bug in JavaScript"
 ├── checklist.txt        # - [x] Find bug, [ ] Fix, [ ] Test
@@ -164,137 +290,198 @@ Update Website/
     └── error_logs.txt
 ```
 
-**Evening:** Move completed task to `Done/`
+**Evening: Completed tasks**
+
 ```
 Done/
-└── Update Website/       # Complete!
+├── Website Update/
+└── Review Reports/
+```
+
+### Example: Long Descriptive Names
+
+The 255-character filename limit allows for highly descriptive task names:
+
+```
+[!] Server Migration - backup completed 2026-08-21 - testing phase 80% - rollback plan ready - due Aug 25/
+```
+
+```
+[@Sarah] Contract review - legal team needs approval - sent Aug 20 - follow up Aug 25/
+```
+
+```
+[DONE] Deploy API v3 - completed Aug 21 - took 2 hours - no issues - post-mortem in folder/
+```
+
+This creates an at-a-glance view of all tasks, their status, and their context.
+
+### Example: Project with Structure
+
+```
+Projects/Website Redesign 2026/
+├── README.md
+├── timeline.md
+├── team.md
+├── 01_Planning/
+│   ├── Research/
+│   │   ├── competitor_analysis.pdf
+│   │   └── user_survey_results.csv
+│   └── Requirements/
+│       ├── requirements.md
+│       └── wireframes.fig
+├── 02_Design/
+│   ├── mockups/
+│   └── style_guide.pdf
+├── 03_Development/
+│   ├── code_reviews/
+│   └── staging_deploy/
+└── 04_Launch/
+    ├── qa_test_results/
+    └── deploy_scripts/
 ```
 
 ---
 
-## 🔍 Searching
+## Reference
 
-### File Manager
-- Use the search bar
-- Sort by date modified
-- Search within folders for specific files
+### Naming Conventions
 
-### Command Line (Advanced)
-```bash
-# Find all tasks with "urgent"
-grep -r "urgent" ~/Documents/Tasks/
+**Priority markers** (add to folder name):
 
-# Find all tasks in Today folder
-find ~/Documents/Tasks/Today/ -type d -maxdepth 1
+- `[!]` — High priority / urgent
+- `[@]` — Waiting on someone
+- `[?]` — Need more information
+- `[DONE]` — Completed
 
-# Find tasks with PDF attachments
-find ~/Documents/Tasks/ -name "*.pdf"
-```
+**Tags** (add to folder name or description):
 
----
+- `#project` — Project tag
+- `#client` — Client tag
+- `#urgent` — Urgency flag
+- `#blocked` — Currently blocked
+- `#waiting` — Waiting for response
 
-## 🌍 Translations
+### Template Files
 
-- [Português](docs/README.pt.md)
-- More coming soon...
-
----
-
-## 📄 License
-
-This project is in the public domain under the [Unlicense](LICENSE). You can use, modify, and share it freely.
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Here's how you can help:
-
-1. **Improve documentation** — Fix typos, clarify explanations
-2. **Add translations** — Make it accessible to more people
-3. **Share your workflow** — Show how you've adapted the system
-4. **Suggest improvements** — Open an issue with your ideas
-
-Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
-
----
-
-## 📬 Questions?
-
-- **Simple version:** See the [Simple Guide](docs/simple/README.md)
-- **Advanced version:** See the [Advanced Guide](docs/advanced/README.md)
-- **Something else?** Open an issue
-
----
-
-## 🌟 Why You'll Love This
-
-> *"The best tool is the one you already have."*
-
-This system works because it uses **what you already know** and **what you already have**. No new apps to learn, no subscriptions to pay, no data locked away in proprietary formats.
-
-It's just folders and files, working the way they've always worked.
-
----
-
-## 📸 Screenshots
-
-*(Add screenshots of Thunar/Nautilus showing the folder structure, task folders, and workflow)*
-
----
-
-## 📂 Repository Structure
+**description.txt**
 
 ```
-filesystem-productivity-system/
-├── README.md                   # This file
-├── docs/
-│   ├── simple/
-│   │   ├── README.md          # Simple guide (English)
-│   │   └── README.pt.md       # Simple guide (Portuguese)
-│   ├── advanced/
-│   │   ├── README.md          # Advanced guide (English)
-│   │   └── README.pt.md       # Advanced guide (Portuguese)
-│   ├── templates/              # Ready-to-use templates
-│   │   ├── task_template/
-│   │   └── project_template/
-│   ├── scripts/                # Helper scripts (advanced version)
-│   │   ├── daily-summary.sh
-│   │   └── auto-archive.sh
-│   └── images/                 # Screenshots and diagrams
-└── examples/                   # Real-world examples
-    ├── simple/
-    └── advanced/
+Task: [Task Name]
+
+Priority: High / Medium / Low
+Due Date: YYYY-MM-DD
+Tags: #project #client
+
+Description:
+[Detailed description of what needs to be done]
 ```
 
+**notes.txt**
+
+```
+Notes: [Task Name]
+
+2026-08-21:
+- Progress update
+- Decisions made
+- Blockers identified
+- Next steps
+```
+
+**checklist.txt**
+
+```
+Checklist: [Task Name]
+
+- [ ] Step 1
+- [ ] Step 2
+- [ ] Step 3
+```
+
+### Cloud Sync Compatibility
+
+| Service | Path Limit | Notes |
+|---------|------------|-------|
+| Git (GitHub/GitLab) | ~4,096 chars | Best option |
+| Google Drive | 32,768 chars | Good option |
+| OneDrive | 400 chars | Limited |
+| Dropbox | 260 chars (recommended) | Most restrictive |
+| Windows (local) | 260 chars | Legacy limit |
+
+**Recommendations:**
+- Keep folder names under 250 characters
+- Avoid special characters: `\`, `/`, `:`, `*`, `?`, `"`, `<`, `>`, `|`
+- Use Git as the primary sync method
+
 ---
 
-## 🎓 Learning Path
+## FAQ
 
-1. **Start simple** — Read the [Simple Guide](docs/simple/README.md)
-2. **Try it for a week** — Use only the basic structure
-3. **Add your own touches** — Create your own naming conventions
-4. **Graduate to advanced** — Add Git when you're ready
-5. **Automate** — Add scripts for repetitive tasks
+**Q: What if I have a lot of files in a task folder?**
+A: Create subfolders inside the task folder to organize:
+```
+Task Name/
+├── files/
+│   ├── images/
+│   ├── documents/
+│   └── data/
+├── notes/
+└── description.txt
+```
+
+**Q: Can I have sub-tasks?**
+A: Yes. Create subfolders inside the task folder:
+```
+Task Name/
+├── 01_Research/
+├── 02_Design/
+├── 03_Development/
+└── 04_Review/
+```
+
+**Q: What about recurring tasks?**
+A: Add `[Daily]` or `[Weekly]` to the folder name. When completed, move to `Done/` and create a new one for the next occurrence.
+
+**Q: Can I use this with a team?**
+A: Yes. Options include:
+- Sharing the folder on a network drive
+- Using Git with a remote repository
+- Syncing via Google Drive or Dropbox
+
+**Q: What's the difference between Done and Archive?**
+A: `Done/` holds recent completions (last few weeks). `Archive/` holds older tasks you want to keep for reference.
+
+**Q: How do I search across all tasks?**
+A: Most file managers have a search bar. For more advanced searching, use `grep` from the command line.
+
+**Q: Is this compatible with Windows or macOS?**
+A: Yes. The folder structure works on any operating system. Just be aware of path length limits on Windows (260 characters by default).
 
 ---
 
-## 📊 Status
+## Contributing
 
-This project is **stable and complete**. The core concepts are proven and have been used for years. The documentation is ready for real-world use.
+Contributions are welcome:
 
-**Current version:** 1.0.0
+1. Improvements to documentation
+2. Additional examples and use cases
+3. Helper scripts
+4. Suggestions for the system
+
+Please open an issue or pull request.
 
 ---
 
-## 🙏 Acknowledgments
+## License
 
-- Inspired by the Unix philosophy: *Do one thing and do it well*
+This project is in the public domain under the Unlicense. You can use, modify, and share it freely.
+
+---
+
+## Acknowledgments
+
+- Inspired by the Unix philosophy: "Do one thing and do it well"
 - Built on the simplicity of the filesystem
 - Made possible by free and open source software
 
----
-
-*"Files and folders. The most powerful productivity tool you already have."*
-
----
