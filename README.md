@@ -454,6 +454,18 @@ A: Your data is stored in their servers, in their format, accessible through the
 
 A: Yes. There is no proprietary format, no cloud dependency, no vendor lock-in. Everything is stored as plain text files and standard folders. You can open, read, and move them with any tool on any operating system. You don't need this system to access your data. You just need a file manager.
 
+**Q: Is this really free?**
+
+A: Yes. The system uses only tools that come with your operating system. There are no subscriptions, no premium tiers, no paid upgrades. The code is in the public domain. You can use, modify, and share it freely.
+
+**Q: Do I need to use Git?**
+
+A: No. Git is entirely optional. The basic system works with just a file manager. Git is an add-on for people who want version history, collaboration, or remote backup.
+
+**Q: What if I have 500 tasks?**
+
+A: The limit is human, not technical. A person cannot meaningfully hold 500 active tasks. Most of those belong in Archive, not in active directories. The structure encourages pruning. If you have 500 tasks in Inbox, the problem isn't the system. The problem is that you're not processing your Inbox. Archive regularly and keep your active directories focused on what's actually relevant.
+
 **Q: What if I have a lot of files in a task folder?**
 
 A: Create subfolders inside the task folder to organize:
@@ -484,6 +496,14 @@ Task Name/
 
 A: Add `[Daily]` or `[Weekly]` to the folder name. When completed, move to `5_Done/` and create a new one for the next occurrence.
 
+**Q: What if I want to use both .txt and .md files in the same task?**
+
+A: That's fine. The system doesn't enforce a single format. You can mix and match based on what you need. Some files might be `.txt` for simplicity, others `.md` for formatting. The system works with any text-based file.
+
+**Q: What if I accidentally move a task to the wrong folder?**
+
+A: Just move it back. There's no penalty or undo limit. The system is forgiving.
+
 **Q: Can I use this with a team?**
 
 A: Yes. Options include:
@@ -506,6 +526,14 @@ A: Yes. The folder structure works on any operating system. Just be aware of pat
 **Q: Is this available on mobile?**
 
 A: Yes, in the sense that any file manager on any platform can access the folder structure. There is no dedicated app, but the system works wherever you can access and move folders.
+
+**Q: Can I use this with my existing folder structure?**
+
+A: Yes. You don't have to start from scratch. You can integrate the system into your existing setup by creating the six main folders and moving your current tasks into them.
+
+**Q: What if I want to use this for things other than tasks?**
+
+A: The structure can be adapted for projects, documentation, research, or any other organizational need. The principles are general.
 
 ---
 
