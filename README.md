@@ -551,14 +551,7 @@ This system is a recognition that the machinery was already there. It's not new.
 
 ## Contributing
 
-Contributions are welcome:
-
-1. Improvements to documentation
-2. Additional examples and use cases
-3. Helper scripts
-4. Suggestions for the system
-
-Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+This project is in the public domain. Fork it, modify it, use it, share it. If you make improvements, consider sharing them back. Open an issue or pull request if you'd like.
 
 ---
 
