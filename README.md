@@ -5,20 +5,6 @@ A task management system that uses only your operating system's filesystem, your
 
 ---
 
-## Why This System Is Easy to Overlook
-
-The filesystem is so common it's invisible. Folders and files are the first thing people learn, and often the last thing they think about.
-
-We're conditioned to look for dedicated apps and specialized tools. But that assumption skips over a question worth asking: how much of what these tools offer is genuinely necessary? How much is just interface design, marketing, or features added to justify a subscription?
-
-The filesystem has been stable, reliable, and free for decades. It doesn't add features to stay relevant. It doesn't need to be new to be useful. It simply works.
-
-This system is built on that foundation. It uses what's already there, in ways you might not have considered. No new app. No subscription. No features you don't need.
-
-The trade-off is explicit: you give up real-time collaboration, mobile apps, and automated reminders in exchange for simplicity, durability, and no subscription. That trade-off is intentional. It may or may not fit your needs.
-
----
-
 ## Quick Start
 
 **1. Create the structure**
@@ -534,6 +520,32 @@ A: Yes. You don't have to start from scratch. You can integrate the system into 
 **Q: What if I want to use this for things other than tasks?**
 
 A: The structure can be adapted for projects, documentation, research, or any other organizational need. The principles are general.
+
+---
+
+## Context
+
+The filesystem is so common it's invisible. Folders and files are the first thing people learn, and often the last thing they think about.
+
+We're conditioned to look for dedicated apps and specialized tools. But that assumption skips over a question worth asking: how much of what these tools offer is genuinely necessary? How much is just interface design, marketing, or features added to justify a subscription?
+
+The filesystem has been stable, reliable, and free for decades. It doesn't add features to stay relevant. It doesn't need to be new to be useful. It simply works.
+
+This system is built on that foundation. It uses what's already there, in ways you might not have considered. No new app. No subscription. No features you don't need.
+
+The trade-off is explicit: you give up real-time collaboration, mobile apps, and automated reminders in exchange for simplicity, durability, and no subscription. That trade-off is intentional. It may or may not fit your needs.
+
+---
+
+## Prior Art
+
+The idea of using the filesystem for task management has surfaced before. Projects like `gtd-on-fs` (2010), `hamster-system`, and `jobdone` each explored similar territory, approaching it from different angles—files instead of folders, CLI-driven interfaces, or automation-focused workflows.
+
+That this idea keeps appearing independently suggests a recurring need that existing tools haven't fully addressed.
+
+What makes this version distinct is partly a matter of timing. In the 80s and 90s, filenames were limited to 8 characters in DOS and 14 in early Unix. File managers were text-based. The conditions weren't right. Now they are.
+
+This system is a recognition that the machinery was already there. It's not new. It's just noticed.
 
 ---
 
